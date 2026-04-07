@@ -31,6 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+<<<<<<< HEAD
 
 ### Environment variables (never commit real credentials) ###
 .env
+=======
+>>>>>>> 247573fd9cc57ab1709113e5f68b6635015c134f

@@ -63,6 +63,7 @@ Copy code
 ```bash
 git clone https://github.com/<your-username>/swasthyasathi.git
 cd swasthyasathi
+<<<<<<< HEAD
 2️⃣ Configure Environment Variables
 Copy `.env.example` to `.env` and fill in your values:
 
@@ -84,6 +85,23 @@ ANTHROPIC_API_KEY=your_anthropic_api_key
 mvn clean install
 mvn spring-boot:run
 ```
+=======
+2️⃣ Configure Database
+Update your application.properties (or application.yml) file:
+
+properties
+Copy code
+spring.datasource.url=jdbc:mysql://localhost:3306/rural_health_care
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+3️⃣ Build and Run
+bash
+Copy code
+mvn clean install
+mvn spring-boot:run
+>>>>>>> 247573fd9cc57ab1709113e5f68b6635015c134f
 Access the application at:
 ➡️ http://localhost:8080
 
