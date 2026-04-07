@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rural Health Care Web</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="nav-icon">🏥</span>
+    <span>Rural Health Care</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+    <li><a href="#appointments" class="nav-link" data-section="appointments">Appointments</a></li>
+    <li><a href="#ambulance" class="nav-link" data-section="ambulance">Ambulance</a></li>
+    <li><a href="#teleconsult" class="nav-link" data-section="teleconsult">Teleconsult</a></li>
+    <li><a href="#register" class="nav-link" data-section="register">Register</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger">☰</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section active">
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Healthcare for Every Village</h1>
+      <p>Connecting rural communities with quality medical care — book appointments, request ambulances, and consult doctors online.</p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="showSection('appointments')">Book Appointment</button>
+        <button class="btn btn-outline" onclick="showSection('ambulance')">Request Ambulance</button>
+      </div>
+    </div>
+    <div class="hero-img">🏥</div>
+  </div>
+  <div class="stats">
+    <div class="stat-card"><h2>500+</h2><p>Patients Served</p></div>
+    <div class="stat-card"><h2>50+</h2><p>Doctors Available</p></div>
+    <div class="stat-card"><h2>24/7</h2><p>Ambulance Service</p></div>
+    <div class="stat-card"><h2>100+</h2><p>Villages Covered</p></div>
+  </div>
+  <div class="services-section">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card" onclick="showSection('appointments')">
+        <div class="service-icon">📅</div>
+        <h3>Book Appointment</h3>
+        <p>Schedule a visit with a specialist doctor near you.</p>
+      </div>
+      <div class="service-card" onclick="showSection('ambulance')">
+        <div class="service-icon">🚑</div>
+        <h3>Ambulance Request</h3>
+        <p>Request emergency ambulance service instantly.</p>
+      </div>
+      <div class="service-card" onclick="showSection('teleconsult')">
+        <div class="service-icon">💻</div>
+        <h3>Teleconsultation</h3>
+        <p>Consult doctors online from your home.</p>
+      </div>
+      <div class="service-card" onclick="showSection('register')">
+        <div class="service-icon">👤</div>
+        <h3>Patient Registration</h3>
+        <p>Register to access all healthcare services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENTS -->
+<section id="appointments" class="section">
+  <div class="page-header">
+    <h1>📅 Book an Appointment</h1>
+    <p>Fill in the details to schedule your appointment</p>
+  </div>
+  <div class="form-container">
+    <form id="appointmentForm" class="form-card">
+      <div class="form-group">
+        <label>Patient ID</label>
+        <input type="number" id="apt-patientId" placeholder="Enter your Patient ID" required />
+      </div>
+      <div class="form-group">
+        <label>Doctor ID</label>
+        <input type="number" id="apt-doctorId" placeholder="Enter Doctor ID" required />
+      </div>
+      <div class="form-group">
+        <label>Appointment Date & Time</label>
+        <input type="datetime-local" id="apt-date" required />
+      </div>
+      <div class="form-group">
+        <label>Reason for Visit</label>
+        <textarea id="apt-reason" placeholder="Describe your symptoms or reason for visit" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Book Appointment</button>
+    </form>
+    <div id="apt-result" class="result-box hidden"></div>
+  </div>
+</section>
+
+<!-- AMBULANCE -->
+<section id="ambulance" class="section">
+  <div class="page-header">
+    <h1>🚑 Request Ambulance</h1>
+    <p>Emergency? Request an ambulance right away</p>
+  </div>
+  <div class="form-container">
+    <form id="ambulanceForm" class="form-card">
+      <div class="form-group">
+        <label>Patient ID</label>
+        <input type="number" id="amb-patientId" placeholder="Enter your Patient ID" required />
+      </div>
+      <div class="form-group">
+        <label>Pickup Address</label>
+        <input type="text" id="amb-pickup" placeholder="Your full address" required />
+      </div>
+      <div class="form-group">
+        <label>Destination Hospital</label>
+        <input type="text" id="amb-hospital" placeholder="Preferred hospital (optional)" />
+      </div>
+      <div class="form-group">
+        <label>Contact Number</label>
+        <input type="tel" id="amb-contact" placeholder="Phone number for ambulance driver" required />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Latitude (optional)</label>
+          <input type="number" id="amb-lat" placeholder="e.g. 28.6139" step="any"/>
+        </div>
+        <div class="form-group">
+          <label>Longitude (optional)</label>
+          <input type="number" id="amb-lng" placeholder="e.g. 77.2090" step="any"/>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-danger btn-full">🚨 Request Ambulance Now</button>
+    </form>
+    <div id="amb-result" class="result-box hidden"></div>
+  </div>
+</section>
+
+<!-- TELECONSULT -->
+<section id="teleconsult" class="section">
+  <div class="page-header">
+    <h1>💻 Teleconsultation</h1>
+    <p>Schedule an online video consultation with a doctor</p>
+  </div>
+  <div class="form-container">
+    <form id="teleForm" class="form-card">
+      <div class="form-group">
+        <label>Patient ID</label>
+        <input type="number" id="tele-patientId" placeholder="Enter your Patient ID" required />
+      </div>
+      <div class="form-group">
+        <label>Doctor ID (optional)</label>
+        <input type="number" id="tele-doctorId" placeholder="Leave blank for auto-assign" />
+      </div>
+      <div class="form-group">
+        <label>Scheduled Date & Time</label>
+        <input type="datetime-local" id="tele-date" required />
+      </div>
+      <div class="form-group">
+        <label>Notes / Symptoms</label>
+        <textarea id="tele-notes" placeholder="Describe your condition briefly" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Schedule Teleconsultation</button>
+    </form>
+    <div id="tele-result" class="result-box hidden"></div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section id="register" class="section">
+  <div class="page-header">
+    <h1>👤 Patient Registration</h1>
+    <p>Create your account to access all services</p>
+  </div>
+  <div class="form-container">
+    <form id="registerForm" class="form-card">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="reg-name" placeholder="Your full name" required />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="reg-email" placeholder="your@email.com" required />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" id="reg-age" placeholder="Your age" min="1" max="120" required />
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <select id="reg-gender" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <input type="text" id="reg-address" placeholder="Village / Town, District" required />
+      </div>
+      <div class="form-group">
+        <label>Preferred Language</label>
+        <select id="reg-language">
+          <option value="Hindi">Hindi</option>
+          <option value="English">English</option>
+          <option value="Bengali">Bengali</option>
+          <option value="Tamil">Tamil</option>
+          <option value="Telugu">Telugu</option>
+          <option value="Marathi">Marathi</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success btn-full">Register Patient</button>
+    </form>
+    <div id="reg-result" class="result-box hidden"></div>
+  </div>
+</section>
+
+<!-- CHATBOT BUTTON -->
+<button class="chatbot-toggle" id="chatToggle" title="AI Health Assistant">
+  <span id="chatIcon">💬</span>
+</button>
+
+<!-- CHATBOT WINDOW -->
+<div class="chatbot-window" id="chatWindow">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <span class="chat-avatar">🤖</span>
+      <div>
+        <strong>HealthBot AI</strong>
+        <small>Rural Health Assistant</small>
+      </div>
+    </div>
+    <button class="chat-close" id="chatClose">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">
+      <span class="msg-avatar">🤖</span>
+      <div class="msg-bubble">
+        Hello! I'm HealthBot, your rural healthcare assistant. I can help you with health questions, symptoms, first aid, and guide you to the right services. How can I help you today?
+      </div>
+    </div>
+  </div>
+  <div class="chat-suggestions">
+    <button class="suggestion" onclick="sendSuggestion('What are symptoms of malaria?')">🦟 Malaria symptoms</button>
+    <button class="suggestion" onclick="sendSuggestion('How to do first aid for a burn?')">🔥 Burn first aid</button>
+    <button class="suggestion" onclick="sendSuggestion('I have fever and headache')">🤒 Fever & headache</button>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" id="chatInput" placeholder="Ask a health question..." />
+    <button id="sendBtn" onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast hidden"></div>
+
+<footer class="footer">
+  <p>© 2025 Rural Health Care Web · Built for Better Rural Healthcare 🏥</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
