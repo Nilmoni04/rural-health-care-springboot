@@ -1,24 +1,24 @@
-# 🏥 Swasthyasathi – Rural Healthcare Management System
+# Swasthyasathi – Rural Healthcare Management System
 
 A full-stack healthcare platform designed to improve **medical accessibility for rural communities**, featuring appointment booking, teleconsultation, emergency services, and an **AI-powered chatbot using Google Gemini API**.
 
 ---
 
-## 🚀 Features
+## Features
 
-### 🩺 Core Functionalities
+### Core Functionalities
 
 * **Patient & Doctor Management** – CRUD operations for managing patient and doctor records
 * **Appointment Scheduling** – Book, view, and manage appointments
 * **Teleconsultation** – Integration with Zoom / Google Meet for remote consultations
-* **🚑 Ambulance Service Module**
+* **Ambulance Service Module**
 
   * Fetch available ambulances from database
   * Returns *“No Ambulance Available”* when fully occupied
 
 ---
 
-### 🤖 AI Chatbot (NEW)
+### AI Chatbot (NEW)
 
 * Integrated **Google Gemini API**
 * Assists users with:
@@ -29,7 +29,7 @@ A full-stack healthcare platform designed to improve **medical accessibility for
 
 ---
 
-### 🌐 Frontend (NEW)
+### Frontend (NEW)
 
 * Interactive UI built with HTML, CSS, JavaScript
 * Enables users to interact easily with backend services
@@ -37,7 +37,7 @@ A full-stack healthcare platform designed to improve **medical accessibility for
 
 ---
 
-## 🧩 Architecture
+## Architecture
 
 Frontend (HTML/CSS/JS)
 ↓
@@ -51,7 +51,7 @@ MySQL Database
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer           | Technologies               |
 | --------------- | -------------------------- |
@@ -65,18 +65,9 @@ MySQL Database
 
 ---
 
-## 📸 Screenshots
+## Setup Instructions
 
-*(Add images in an `/images` folder and link them here)*
-
-![Home](images/home.png)
-![Chatbot](images/chatbot.png)
-
----
-
-## ⚙️ Setup Instructions
-
-### 1️⃣ Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/Nilmoni04/rural-health-care-springboot.git
@@ -85,7 +76,7 @@ cd rural-health-care-improved
 
 ---
 
-### 2️⃣ Configure Environment Variables
+### Configure Environment Variables
 
 Create a `.env` file:
 
@@ -98,19 +89,18 @@ GEMINI_API_KEY=your_api_key
 
 ---
 
-### 3️⃣ Build and Run
+### Build and Run
 
 ```bash
 mvn clean install
 mvn spring-boot:run
 ```
 
-Access the app at:
-➡️ http://localhost:8080
+Access the app at: http://localhost:8080
 
 ---
 
-## 📚 API Overview
+## API Overview
 
 | Endpoint          | Method              | Description              |
 | ----------------- | ------------------- | ------------------------ |
@@ -122,7 +112,7 @@ Access the app at:
 
 ---
 
-## 📈 Key Achievements
+## Key Achievements
 
 * Built scalable REST APIs using Spring Boot
 * Integrated AI chatbot for real-time healthcare assistance
@@ -131,15 +121,4 @@ Access the app at:
 
 ---
 
-## 🔮 Future Improvements
 
-* 🔐 Add authentication and role-based access
-* 📊 Analytics dashboard
-* 🌐 Multi-language support
-
----
-
-## ⭐ Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub!
-ar ⭐ the repository — it motivates contributors to keep improving Swasthyasathi!
